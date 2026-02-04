@@ -1,0 +1,38 @@
+.public-panel {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--bg-color);
+    padding: 20px;
+}
+
+.locker-grid {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    /* 10 columns */
+    gap: 12px;
+    width: 100%;
+    max-width: 1600px;
+}
+
+/* Response Grid Adjustments */
+@media (max-width: 1400px) {
+    .locker-grid {
+        grid-template-columns: repeat(6, 1fr);
+        /* 6 columns */
+        padding-bottom: 50px;
+        /* Scroll room */
+    }
+
+    .public-panel {
+        align-items: flex-start;
+        /* scrollable */
+    }
+}
+
+@media (max-width: 800px) {
+    .locker-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}

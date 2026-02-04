@@ -1,0 +1,81 @@
+.locker-card {
+    position: relative;
+    aspect-ratio: 162/256;
+    /* Based on typical locker ratio or image ratio */
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    background: #000;
+}
+
+.locker-card:hover {
+    transform: scale(1.02);
+    z-index: 10;
+}
+
+.locker-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.locker-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.6));
+}
+
+.locker-number {
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+    font-size: 1.2rem;
+}
+
+.key-indicator {
+    align-self: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    margin-top: auto;
+    margin-bottom: 20%;
+    /* Position it near the keyhole area approx */
+}
+
+/* Glow Effects */
+.locker-card.available {
+    box-shadow: inset 0 0 15px rgba(0, 255, 136, 0.4);
+    border: 1px solid rgba(0, 255, 136, 0.3);
+}
+
+.locker-card.occupied {
+    box-shadow: inset 0 0 15px rgba(255, 51, 85, 0.4);
+    border: 1px solid rgba(255, 51, 85, 0.3);
+}
+
+.key-indicator.has-key {
+    color: #00ff88;
+    box-shadow: 0 0 8px rgba(0, 255, 136, 0.6);
+    border-color: #00ff88;
+}
+
+.key-indicator.no-key {
+    color: #ff3355;
+    box-shadow: 0 0 8px rgba(255, 51, 85, 0.6);
+    border-color: #ff3355;
+}
